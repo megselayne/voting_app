@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/login', to: 'users#login', as: :login
-
+  # to allow testers to easily logout without FE functionality
+  if Rails.env.development?
+    get '/logout', to: 'users#logout', as: :logout
+  end
   post '/users', to: 'users#create', as: :create_user
   
   # Vote routes

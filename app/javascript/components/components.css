@@ -1,0 +1,71 @@
+/* Vote Component */
+.vote-page, .login-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+
+.vote-page fieldset {
+    border: none;
+    padding: 0;
+}
+
+.vote-page__radio-input {
+    margin-bottom: 1rem;
+    transform: scale(1.5); 
+    border: 2px solid #999999;
+}
+
+.vote-page__input, .login-page__input {
+    padding: .7rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    border: 2px solid #999999;
+}
+
+/* Login Component */
+.login-page__form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    max-width: 25rem;
+}
+
+.login-page__form button {
+    align-self: flex-start; 
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* Results Component */
+.results-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 4rem;
+}
+
+.results-table {
+    width: 70%;
+    max-width: 35rem;
+    border-collapse: collapse;
+}
+
+
+.results-table__header {
+    display: none; 
+}
+
+.results-table__row {
+    border-bottom: 1px solid #999999;
+}
+
+.results-table__row:first-child {
+    border-top: 1px solid #999999;
+}
+
+.results-table__cell {
+    padding: 0.7rem;
+}

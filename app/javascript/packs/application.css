@@ -1,3 +1,15 @@
+@import '../styles/base.css';
+@import '../components/components.css';
+
+.header__nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  border: 2px solid;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,3 +17,4 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
 }
+

@@ -32,10 +32,11 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_26_200657) do
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.integer "candidate_id", null: false
     t.integer "election_id", null: false
     t.datetime "created_at", null: false
@@ -43,9 +44,11 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_26_200657) do
     t.index ["candidate_id"], name: "index_votes_on_candidate_id"
     t.index ["election_id"], name: "index_votes_on_election_id"
     t.index ["user_id", "election_id"], name: "index_votes_on_user_id_and_election_id", unique: true
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "candidates", "elections"
   add_foreign_key "votes", "candidates"
   add_foreign_key "votes", "elections"
+  add_foreign_key "votes", "users"
 end

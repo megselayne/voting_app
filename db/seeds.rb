@@ -7,3 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# Create music festival election
+election = Election.find_or_create_by!(name: "Music Fest 2025", slug: "music-fest-2025")

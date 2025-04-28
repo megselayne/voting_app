@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header class='header'>
+      <nav>
+      <ul class="header__nav-list">
+        <li>
+          VOTE.WEBSITE
+        </li>
+        <% if current_user_email %>
+          <li class="header__nav-item">signed in as <%= current_user_email %></li>
+        <% end %>
+      </ul>
+      </nav>
+    </header/>
     <%= yield %>
   </body>
 </html>

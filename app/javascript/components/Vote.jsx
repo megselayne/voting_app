@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Vote = ({ candidates, election }) => {
+const Vote = ({ candidates, election, flashMessage }) => {
   const candidatesCount = candidates.length;
 
   return (
     <main className='vote-page'>
+      {flashMessage && <div className='alert alert-danger'>{flashMessage}</div>}
       <h1>Cast your vote today!</h1>
 
       {/* Voting form if candidates exist */}
@@ -28,7 +29,7 @@ const Vote = ({ candidates, election }) => {
       {/* Max 10 candidates*/}
       {candidatesCount < 10 && (
         <section aria-labelledby='add-candidate-title'>
-        <p id='add-candidate-title'>{hasCandidates ? 'Or, add a new candidate:' : 'Add a new candidate:'}</p>
+        <p id='add-candidate-title'>{candidatesCount > 0 ? 'Or, add a new candidate:' : 'Add a new candidate:'}</p>
         <form action={`/elections/${election.slug}/votes`} method='post' aria-labelledby='add-candidate-title'>
           <input type='hidden' name='authenticity_token' value={document.querySelector('meta[name="csrf-token"]').content} />
           <input className='vote-page__input' type='text' id='candidate_name' name='candidate[name]' placeholder='Enter name...' required />

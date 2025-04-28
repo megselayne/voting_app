@@ -4,6 +4,12 @@
     flex-direction: column;
     margin-top: 4rem;
     margin-left: 4rem;
+    width: 70%;
+    max-width: 35rem;
+}
+
+.alert-danger {
+    animation: fadeOut 5s forwards;
 }
 
 .vote-page fieldset {

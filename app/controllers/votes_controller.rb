@@ -52,12 +52,14 @@ class VotesController < ApplicationController
     Vote.exists?(user_id: session[:user_id], election_id: election.id)
   end
 
-  # Show page to vote in an election
+  # Form page to vote in an election
   def new
     # Prevent users manually trying to access voting page without logging in
-    redirect_to login_path unless session[:user_id]
+    redirect_to root_path unless session[:user_id]
 
     @election = Election.find_by(slug: params[:election_slug])
+
+    # Redirect to results if user already voted
     redirect_to election_results_path(@election.slug) if already_voted?(@election)
 
     @candidates = Candidate.where(election_id: @election.id)

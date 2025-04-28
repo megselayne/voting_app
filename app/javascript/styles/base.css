@@ -14,3 +14,24 @@
   .btn-primary:hover {
     background-color: #333;
   }
+
+  .alert-danger {
+    animation: fadeOut 3s 5s forwards;
+  }
+
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

@@ -8,17 +8,18 @@ class UsersController < ApplicationController
     session[:user_id] = user.id
     redirect_to election_vote_path(Election.first.slug)
   rescue ActiveRecord::RecordInvalid
-    @flash_alert = 'Error: Email already exists with different zip code.'
-    render :login
+    flash[:alert] = 'Error: Email already exists with different zip code.'
+    redirect_to login_path
   end
 
   def login
+    @flash_alert = flash[:alert]
     redirect_to election_vote_path(Election.first.slug) if session[:user_id]
   end
 
   # Clear session
   def logout
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to login_path
   end
 end

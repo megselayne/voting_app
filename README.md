@@ -83,5 +83,5 @@ Rails server (and your shakapacker-dev-server if it was running).
 - [ ] Keyboard accessibility
 - [ ] Focus order
 
-## UX Improvements
+### UX Improvements
 - [ ] The user flow is largely dictated by redirects right now. Some of this is okay, but it would be nice to have some traditional navigation and possibly some secondary state copy for when a user has already voted etc.
